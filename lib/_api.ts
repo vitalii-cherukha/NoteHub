@@ -1,9 +1,9 @@
 import axios from 'axios';
 import type { CreateNote, Note } from '@/types/note';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL + '/api';
+const baseURL = process.env.NEXT_PUBLIC_API_URL + '/api';
 
-axios.defaults.baseURL = BASE_URL;
+axios.defaults.baseURL = baseURL;
 
 interface FetchNotesResponse {
   notes: Note[];
