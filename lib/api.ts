@@ -1,10 +1,13 @@
 import axios from 'axios';
 import type { CreateNote, Note } from '@/types/note';
 
-const API_KEY = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
+// const API_KEY = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
-axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
-axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+// axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
+axios.defaults.baseURL = BASE_URL;
+// axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
 
 interface FetchNotesResponse {
   notes: Note[];
