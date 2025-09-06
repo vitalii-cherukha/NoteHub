@@ -28,7 +28,7 @@ const EditProfilePage = () => {
 
     const updatedUser = await patchMe(username.trim());
     setUser(updatedUser);
-    router.back();
+    router.push('/profile');
   };
 
   if (!user) return <p>Loading...</p>;
