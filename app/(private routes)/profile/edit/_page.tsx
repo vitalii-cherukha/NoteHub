@@ -26,9 +26,9 @@ const EditProfilePage = () => {
   const handleSubmit = async () => {
     if (!username) return;
 
-    const updatedUser = await patchMe(username);
+    const updatedUser = await patchMe(username.trim());
     setUser(updatedUser);
-    router.refresh();
+    router.back();
   };
 
   if (!user) return <p>Loading...</p>;
