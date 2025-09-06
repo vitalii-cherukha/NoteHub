@@ -38,11 +38,11 @@ export const deleteNote = async (noteId: string): Promise<Note> => {
   return data;
 };
 
-export const register = async (credentials: Credentials) => {
+export const register = async (credentials: Credentials): Promise<User> => {
   const { data } = await nextServer.post<User>('/auth/register', credentials);
   return data;
 };
-export const login = async (credentials: Credentials) => {
+export const login = async (credentials: Credentials): Promise<User> => {
   const { data } = await nextServer.post<User>('/auth/login', credentials);
 
   return data;
@@ -59,17 +59,14 @@ export const checkSession = async () => {
   const { data } = await nextServer.get<SessionStatus>('/auth/session');
   return data.success;
 };
-export const getMe = async () => {
+export const getMe = async (): Promise<User> => {
   const { data } = await nextServer.get<User>('/users/me');
   return data;
 };
 
-export const patchMe = async (email: string, username: string) => {
+export const patchMe = async (username: string): Promise<User> => {
   const { data } = await nextServer.patch<User>('/users/me', {
-    params: {
-      email,
-      username,
-    },
+    username,
   });
   return data;
 };

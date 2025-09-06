@@ -29,7 +29,7 @@ export const generateMetadata = async ({
         slug[0] === 'All%20notes'
           ? 'All notes'
           : `Notes with category ${slug[0]}`,
-      url: `https://08-zustand-ten-indol.vercel.app/notes/filter/${slug[0]}`,
+      url: `https://09-auth-five-theta.vercel.app/notes/filter/${slug[0]}`,
       images: [
         {
           url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',

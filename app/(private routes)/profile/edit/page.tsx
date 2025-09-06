@@ -4,11 +4,34 @@ import Image from 'next/image';
 import css from './EditProfilePage.module.css';
 import { useRouter } from 'next/navigation';
 import { getMe, patchMe } from '@/lib/api/clientApi';
+import { useEffect, useState } from 'react';
+import { User } from '@/types/user';
 
 const EditProfilePage = () => {
   const router = useRouter();
-  const user = getMe();
-  const patchUser = patchMe();
+  const [user, setUser] = useState<User | null>(null);
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    getMe().then(data => {
+      setUser(data);
+      setUsername(data.username);
+    });
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
+  const handleSubmit = async () => {
+    if (!username) return;
+
+    const updatedUser = await patchMe(username);
+    setUser(updatedUser);
+    router.refresh();
+  };
+
+  if (!user) return <p>Loading...</p>;
 
   return (
     <main className={css.mainContent}>
@@ -23,10 +46,11 @@ const EditProfilePage = () => {
           className={css.avatar}
         />
 
-        <form className={css.profileInfo}>
+        <form action={handleSubmit} className={css.profileInfo}>
           <div className={css.usernameWrapper}>
             <label htmlFor="username">Username:</label>
             <input
+              value={username}
               onChange={handleChange}
               id="username"
               type="text"
@@ -34,7 +58,7 @@ const EditProfilePage = () => {
             />
           </div>
 
-          <p>Email: user_email@example.com</p>
+          <p>Email: {user.email}</p>
 
           <div className={css.actions}>
             <button type="submit" className={css.saveButton}>
