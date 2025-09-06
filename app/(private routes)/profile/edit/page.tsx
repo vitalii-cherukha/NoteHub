@@ -6,11 +6,13 @@ import { useRouter } from 'next/navigation';
 import { getMe, patchMe } from '@/lib/api/clientApi';
 import { useEffect, useState } from 'react';
 import { User } from '@/types/user';
+import { useAuthStore } from '@/lib/store/authStore';
 
 const EditProfilePage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [username, setUsername] = useState('');
+  const { setUser: setGlobalUser } = useAuthStore();
 
   useEffect(() => {
     getMe().then(data => {
@@ -28,6 +30,7 @@ const EditProfilePage = () => {
 
     const updatedUser = await patchMe(username.trim());
     setUser(updatedUser);
+    setGlobalUser(updatedUser);
     router.push('/profile');
   };
 
