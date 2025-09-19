@@ -19,7 +19,7 @@ const NoteList = ({ notes }: NoteListProps) => {
   const handleDelete = (id: string) => {
     mutation.mutate(id);
   };
-
+  console.log(notes);
   return (
     <ul className={css.list}>
       {notes.map(note => (
