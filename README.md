@@ -84,26 +84,27 @@ It includes authentication, private routes, tags, search, and modal routing.
 📄 package.json
 📄 .gitignore / .prettierrc.json / eslint.config.mjs
 ```
-🚀 Getting Started
-1️⃣ Clone repo
+## 🚀 Getting Started
 
-Копіювати код
+1️⃣ Clone repo
+```
 git clone https://github.com/vitalii-cherukha/NoteHub.git
 cd NoteHub
-2️⃣ Install dependencies
+```
 
-Копіювати код
+2️⃣ Install dependencies
+```
 npm install
+```
+
 3️⃣ Create .env in root with:
 
-env
-Копіювати код
+.env
 ```
 NEXT_PUBLIC_API_URL=http://localhost:3000/
 ```
-4️⃣ Run dev server
 
-Копіювати код
+4️⃣ Run dev server
 ```
 npm run dev
 ```
