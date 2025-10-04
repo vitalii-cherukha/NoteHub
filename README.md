@@ -87,13 +87,11 @@ It includes authentication, private routes, tags, search, and modal routing.
 🚀 Getting Started
 1️⃣ Clone repo
 
-bash
 Копіювати код
 git clone https://github.com/vitalii-cherukha/NoteHub.git
 cd NoteHub
 2️⃣ Install dependencies
 
-bash
 Копіювати код
 npm install
 3️⃣ Create .env in root with:
@@ -105,7 +103,6 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/
 ```
 4️⃣ Run dev server
 
-bash
 Копіювати код
 ```
 npm run dev
