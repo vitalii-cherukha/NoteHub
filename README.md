@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 NoteHub
 
-## Getting Started
+**NoteHub** is a pet project built with **Next.js + TypeScript** for managing notes.  
+It includes authentication, private routes, tags, search, and modal routing.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🔗 Live & Repo
+
+- 🌍 Live: [note-hub-phi.vercel.app](https://note-hub-phi.vercel.app/)  
+- 📂 Repository: [github.com/vitalii-cherukha/NoteHub](https://github.com/vitalii-cherukha/NoteHub)
+
+---
+
+## ✨ Features
+
+- 🔐 Auth (Sign In / Sign Up)  
+- 📓 Notes CRUD (create, edit, delete)  
+- 🗂️ Private routes (Notes, Profile)  
+- 🔍 Search & tags filtering  
+- 🪟 Modal routing for note details  
+- 📑 Pagination  
+- 📦 REST API + TanStack Query  
+- 🎨 CSS Modules + global styles  
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ Next.js + React  
+- 🟦 TypeScript  
+- 🎨 CSS Modules  
+- 🔄 TanStack Query  
+- 🌐 REST API  
+- 🧩 React Context + custom store  
+- ✅ ESLint + Prettier  
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+📁 NoteHub/
+├─ 📁 app/                # Next.js routes
+│  ├─ 🔑 (auth routes)/   # Sign In / Sign Up
+│  ├─ 🔒 (private routes)/# Notes / Profile
+│  ├─ 🪟 @modal/          # Modal routing
+│  ├─ 📄 layout.tsx       # Root layout
+│  ├─ 📄 page.tsx         # Home page
+│  ├─ 📄 loading.tsx      # Loading UI
+│  ├─ 📄 not-found.tsx    # 404 page
+│  └─ 📁 api/             # API routes
+│
+├─ 📁 components/         # Reusable UI
+│  ├─ 🔑 AuthProvider
+│  ├─ 📑 NotesPage
+│  ├─ 📝 NoteForm / NoteList / NoteDetails
+│  ├─ 🪟 Modal
+│  ├─ 🔍 SearchBox
+│  ├─ 🗂️ SidebarNotes / TagsMenu
+│  ├─ 📊 Pagination
+│  └─ 🌐 TanStackProvider
+│
+├─ 📁 lib/                # Core logic
+│  ├─ 🌐 api
+│  ├─ 📦 store
+│  └─ 🏷️ tagList.ts
+│
+├─ 📁 public/             # Static files
+│  ├─ 📄 file.svg
+│  ├─ 🌍 globe.svg
+│  └─ ⚡ next.svg / vercel.svg / window.svg
+│
+├─ 📁 types/              # TS types
+│  ├─ 📝 note.ts
+│  └─ 👤 user.ts
+│
+📄 globals.css
+📄 layout.module.css
+📄 api.ts
+📄 middleware.ts
+📄 next.config.ts
+📄 tsconfig.json
+📄 package.json
+📄 .gitignore / .prettierrc.json / eslint.config.mjs
 ```
+🚀 Getting Started
+1️⃣ Clone repo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash
+Копіювати код
+git clone https://github.com/vitalii-cherukha/NoteHub.git
+cd NoteHub
+2️⃣ Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+bash
+Копіювати код
+npm install
+3️⃣ Create .env in root with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+env
+Копіювати код
+```
+NEXT_PUBLIC_API_URL=http://localhost:3000/
+```
+4️⃣ Run dev server
 
-## Learn More
+bash
+Копіювати код
+```
+npm run dev
+```
+5️⃣ Open http://localhost:3000 🎉
 
-To learn more about Next.js, take a look at the following resources:
+🔮 Future Plans
+🌙 Dark / Light mode
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🤝 Note sharing between users
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🖋️ Rich text editor
 
-## Deploy on Vercel
+🧪 Unit tests (Jest + RTL)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔄 GraphQL API migration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👤 Author
+Developed with ❤️ by Vitalii Cherukha
+📌 Pet project to practice Next.js, TypeScript & modern React ecosystem
