@@ -45,7 +45,9 @@ const Notes = ({ tag }: NotesProps) => {
           Create note +
         </Link>
       </header>
-      {data && data.notes.length > 0 && <NoteList notes={data.notes} />}
+      <div className={css.notesContainer}>
+        {data && data.notes.length > 0 && <NoteList notes={data.notes} />}
+      </div>
     </div>
   );
 };
